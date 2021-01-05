@@ -7,4 +7,4 @@
 
 curl --request POST "http://localhost:8086/api/v2/write?org=bobiko&bucket=sensors&precision=s" \
 --header "Authorization: Token bbSji2EmsBdHkW4F9Sncu8TqNR3v1NxZZPvf2-DdmttzTxTq8KRnXXV67SkF1PWEuTb_VMyVgV9bUNdGJzXP0w==" \
---data-binary "AquaraBluetoothSensors,sensorname=$2 temperature=$3,calibratedHumidity=$6,voltage=$5 $7"
+--data-binary "AquaraBluetoothSensors,sensorname=$2,temperature=$3,humidity=$4,batteryLevel=$7,calibratedHumidity=$6,voltage=$5 $8"
