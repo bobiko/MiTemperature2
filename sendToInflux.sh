@@ -5,5 +5,6 @@
 #DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 #$DIR/LYWSD03MMC.py -d <device> -2p -p2 75 -o2 -4 -p1 33 -o1 -6 -r --debounce --skipidentical 50 --name MySensor --callback sendToInflux.sh
 
-
-curl -i -u "admin:12345678" -XPOST http://192.168.8.2:8086/sensors\&precision=s --data-binary "AquaraBluetoothSensors,sensorname=$2 temperature=$3,calibratedHumidity=$6,voltage=$5 $7"
+curl --request POST "http://localhost:8086/api/v2/write?org=bobiko&bucket=speedtest&precision=s" \
+--header "Authorization: Token bbSji2EmsBdHkW4F9Sncu8TqNR3v1NxZZPvf2-DdmttzTxTq8KRnXXV67SkF1PWEuTb_VMyVgV9bUNdGJzXP0w==" \
+--data-binary "AquaraBluetoothSensors,sensorname=$2 temperature=$3,calibratedHumidity=$6,voltage=$5 $7"
